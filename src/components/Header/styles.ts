@@ -7,3 +7,9 @@ export const Body = styled.View`
     padding: 26px;
 `;
 
+export const Title = styled.Text`
+    font-size: 32px;
+    font-weight: semi-bold;
+    font-family: Poppins_400Regular;
+`;
+

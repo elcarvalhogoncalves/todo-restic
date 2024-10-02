@@ -16,10 +16,9 @@ export const Body = styled(TouchableOpacity)`
 
 export const Title = styled.Text.attrs({ numberOfLines: 1 })<{ check: boolean }>`
     text-decoration-line: ${(props) => props.check ? "line-through" : "none"};
+    font-family: "Poppins_600SemiBold";
+    font-size: 16px;
     flex: 1;
-    justify-content: center;    
-    font-size: 18px;
-    font-family: "Poppins_700Bold";
     color: #000;
     padding: 0 12px;
 `;

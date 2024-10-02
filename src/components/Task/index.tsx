@@ -22,7 +22,7 @@ export function Task({ title }: { title: string }) {
                 {checked && <Feather name="check" size={22} color="#4CAF50" />}
             </Square>
             <Title check={checked} >{title}</Title>
-            <Feather name="trash-2" size={24} color="#F44336" />
+            <Feather onPress={()=> console.log("Deletado")} name="trash-2" size={24} color="#F44336" />
         </Body>
     );
 }

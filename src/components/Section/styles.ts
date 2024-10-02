@@ -10,6 +10,7 @@ export const Body = styled.View`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    gap: 16px;
 `;
 
 export const TitleSection = styled.View`
@@ -17,12 +18,12 @@ export const TitleSection = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
 `;
 export const TitleText = styled.Text`
     font-size: 24px;
     font-weight: semi-bold;
     font-family: Poppins_600SemiBold;
+    font-weight: bold;
 `;
 
 export const BodySection = styled(View)<SectionHiddenProps>`

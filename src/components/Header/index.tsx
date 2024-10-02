@@ -1,10 +1,10 @@
 import { Text } from 'react-native';
-import { Body } from './styles';
+import { Body, Title } from './styles';
 
 export function Header(){
     return(
         <Body>
-            <Text>Header</Text>
+            <Title>Header</Title>
         </Body>
     );
 
