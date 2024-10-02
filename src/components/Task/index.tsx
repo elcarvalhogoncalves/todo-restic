@@ -1,9 +1,14 @@
-import { Body } from "./styles";
+import { Body, Title, Square } from "./styles";
 import { Text } from "react-native";
+import Feather from '@expo/vector-icons/Feather';
+import { useState } from "react";
 
 export function Task({ title }: { title: string }) {
+    const [checked, setChecked] = useState(false);
     return (
-        <Body style={
+        <Body 
+            onPress={() => console.log("Task clicked")}
+            style={
             {shadowColor: "#a1a1a1",
                 shadowOffset: {
                   width: 0,
@@ -13,7 +18,11 @@ export function Task({ title }: { title: string }) {
                 shadowRadius: 5.62,
                 elevation: 7}
         }>
-            <Text>{title}</Text>
+            <Square onPress={()=> setChecked(!checked)}>
+                {checked && <Feather name="check" size={22} color="#4CAF50" />}
+            </Square>
+            <Title check={checked} >{title}</Title>
+            <Feather name="trash-2" size={24} color="#F44336" />
         </Body>
     );
 }
