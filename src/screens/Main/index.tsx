@@ -7,7 +7,6 @@ import { Tasks } from "../../components/Tasks";
 export function Main() {
     return (
         <Body>
-            
             <Container>
                 <Tasks/>
             </Container>  

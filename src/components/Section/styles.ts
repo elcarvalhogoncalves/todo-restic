@@ -7,7 +7,6 @@ export type SectionHiddenProps = {
 
 
 export const Body = styled.View`
-    flex: 1;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -18,8 +17,14 @@ export const TitleSection = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
 `;
+export const TitleText = styled.Text`
+    font-size: 24px;
+    font-weight: semi-bold;
+    font-family: Poppins_600SemiBold;
+`;
+
 export const BodySection = styled(View)<SectionHiddenProps>`
     display: ${({ hidden }) => hidden ? "none" : "flex"};
     width: 100%;
