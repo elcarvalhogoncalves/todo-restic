@@ -11,6 +11,7 @@ export const Body = styled(TouchableOpacity)`
     justify-content: space-between;
     background-color: #fff;
     border-radius: 16px;
+    border: 1px solid #DDD;
     padding: 0 24px;
 `;
 

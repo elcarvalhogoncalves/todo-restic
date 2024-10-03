@@ -8,16 +8,7 @@ export function Task({ title }: { title: string }) {
     return (
         <Body 
             onPress={() => console.log("Task clicked")}
-            style={
-            {shadowColor: "#a1a1a1",
-                shadowOffset: {
-                  width: 0,
-                  height: 5,
-                },
-                shadowOpacity:  0.20,
-                shadowRadius: 5.62,
-                elevation: 7}
-        }>
+        >
             <Square onPress={()=> setChecked(!checked)}>
                 {checked && <Feather name="check" size={22} color="#4CAF50" />}
             </Square>

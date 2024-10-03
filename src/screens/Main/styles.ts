@@ -6,5 +6,4 @@ export const Body = styled.View`
   background-color: #F2C063;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
 `;
