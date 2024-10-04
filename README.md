@@ -22,7 +22,7 @@ Este é um aplicativo de To-Do estilo bloco de notas, desenvolvido em **React Na
 
 ## Pré-requisitos
 
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+Antes de começar, você vai precisar ter instalado em seu computador as seguintes ferramentas:
 
 - [Node.js](https://nodejs.org/en/)
 - [Expo CLI](https://docs.expo.dev/get-started/installation/)
