@@ -1,4 +1,4 @@
-import { Body, Title, Square } from "./styles";
+import { Body, Title, Square, Trash } from "./styles";
 import { Text } from "react-native";
 import Feather from "@expo/vector-icons/Feather";
 import { useContext, useState } from "react";
@@ -25,15 +25,12 @@ export function Task({ id, title, status, onCheck, onRemove }: TaskProps) {
 	return (
 		<Body onPress={handlePress}>
 			<Square onPress={onCheck}>
-				{status && <Feather name="check" size={22} color="#4CAF50" />}
+				{status && <Feather name="check" size={24} color="#4CAF50" />}
 			</Square>
 			<Title check={status}>{title}</Title>
-			<Feather
-				onPress={onRemove}
-				name="trash-2"
-				size={24}
-				color="#F44336"
-			/>
+			<Trash onPress={onRemove}>
+				<Feather name="trash-2" size={24} color="#F44336" />
+			</Trash>
 		</Body>
 	);
 }

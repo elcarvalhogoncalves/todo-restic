@@ -10,6 +10,7 @@ import { TaskContext } from "../../context/TaskContext";
 import { RootStackParamList, TaskProps } from "../../utils/types";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
+import { MessageSuccess } from "../../components/MessageSuccess";
 
 type NoteProps = NativeStackScreenProps<RootStackParamList>;
 
@@ -24,22 +25,7 @@ export function Note() {
 				? { ...task, description: taskTextAreaNote }
 				: task
 		);
-		if (Platform.OS === "android") {
-			const showToast = () => {
-				ToastAndroid.show(
-					"Descrição alterada com sucesso!",
-					ToastAndroid.SHORT
-				);
-			};
-			showToast();
-		} else if (Platform.OS === "ios") {
-			const showAlert = () => {
-				Alert.alert("Sucesso", "Dados alterados com sucesso!", [
-					{ text: "OK" },
-				]);
-			};
-			showAlert();
-		}
+		MessageSuccess("Descrição alterada com sucesso!");
 		setTasks(map);
 	}
 

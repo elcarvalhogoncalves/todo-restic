@@ -24,6 +24,7 @@ export const TaskContext = createContext<TaskContextProps>({
 });
 
 function TaskProvider({ children }: TaskProviderProps) {
+	const [id, setId] = useState(0);
 	const [task, setTask] = useState<TaskProps>({
 		id: 0,
 		title: "",
@@ -54,12 +55,13 @@ function TaskProvider({ children }: TaskProviderProps) {
 
 	function createTask(title: string, description: string) {
 		const newTask = {
-			id: tasks.length + 1,
+			id: id,
 			title,
 			description,
 			status: false,
 		};
 		setTasks([...tasks, newTask]);
+		setId(id + 1);
 	}
 
 	const selectTask = (task: TaskProps) => {

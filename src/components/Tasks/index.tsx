@@ -1,5 +1,5 @@
 import { Section } from "../../components/Section";
-import { FlatList, Text, View, Modal, Alert } from "react-native";
+import { FlatList, View, Alert } from "react-native";
 import { Task } from "../../components/Task";
 import { ButtonAdd } from "../ButtonAdd";
 import { EmptyList } from "../EmptyList";
@@ -23,7 +23,6 @@ export function Tasks() {
 				: task
 		);
 		setTasks(map);
-		console.log(map);
 	}
 	function handleTaskDelete(taskToDelete: TaskProps) {
 		Alert.alert(
@@ -51,6 +50,8 @@ export function Tasks() {
 		<Section title="Tasks">
 			<FlatList
 				data={tasks}
+				scrollEnabled={true}
+				showsVerticalScrollIndicator={false}
 				keyExtractor={(item, index) => index.toString()}
 				renderItem={({ item }) => (
 					<Task
@@ -68,13 +69,19 @@ export function Tasks() {
 				ListEmptyComponent={
 					<EmptyList message="Nenhuma tarefa encontrada" />
 				}
+				ListFooterComponent={() => (
+					<ButtonAdd
+						title="Adicionar tarefa"
+						handleModalCreateTask={handleModalCreateTask}
+					/>
+				)}
+				ListFooterComponentStyle={{
+					marginTop: 32,
+					marginBottom: 64,
+				}}
 			/>
 			<ModalCreateTask
 				modalVisible={modalCreateTask}
-				handleModalCreateTask={handleModalCreateTask}
-			/>
-			<ButtonAdd
-				title="Adicionar tarefa"
 				handleModalCreateTask={handleModalCreateTask}
 			/>
 		</Section>

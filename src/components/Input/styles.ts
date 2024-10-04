@@ -6,9 +6,9 @@ type Type = {
 
 export const Body = styled.View<Type>`
 	${(props) => (props.Type === "TEXTAREA_NOTE" ? "flex: 1;" : "")}
+	${(props) => (props.Type === "TEXTAREA_NOTE" ? "margin-bottom: 24px;" : "")}
 	width: 100%;
 	background-color: #f2c063;
-	margin-bottom: 24px;
 `;
 export const InputText = styled.TextInput`
 	background-color: #d9d9d9;

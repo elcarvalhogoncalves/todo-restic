@@ -26,10 +26,19 @@ export const Title = styled.Text.attrs({ numberOfLines: 1 })<{
 `;
 
 export const Square = styled(TouchableOpacity)`
-	width: 24px;
-	height: 24px;
+	width: 28px;
+	height: 28px;
 	border-radius: 4px;
 	background-color: #ddd;
 	border: 1px solid #bbbbbb;
 	align-items: center;
+	justify-content: center;
+`;
+
+export const Trash = styled(TouchableOpacity)`
+	width: 32px;
+	height: 32px;
+	border-radius: 4px;
+	align-items: center;
+	justify-content: center;
 `;

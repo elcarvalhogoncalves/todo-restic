@@ -8,6 +8,7 @@ type InputProps = {
 	type?: InputType;
 	value: string;
 	onChangeText: (text: string) => void;
+	onBlur?: (e: any) => void;
 };
 
 export function Input({
@@ -15,6 +16,7 @@ export function Input({
 	type = "TEXT",
 	value,
 	onChangeText,
+	onBlur,
 }: InputProps) {
 	return (
 		<Body Type={type}>
@@ -26,6 +28,7 @@ export function Input({
 					keyboardType="default"
 					value={value}
 					onChangeText={onChangeText}
+					onBlur={onBlur}
 				/>
 			) : type === "PASSWORD" ? (
 				<InputText
@@ -35,6 +38,7 @@ export function Input({
 					keyboardType="default"
 					value={value}
 					onChangeText={onChangeText}
+					onBlur={onBlur}
 				/>
 			) : type === "TEXTAREA" ? (
 				<TextArea
@@ -45,6 +49,7 @@ export function Input({
 					keyboardType="default"
 					value={value}
 					onChangeText={onChangeText}
+					onBlur={onBlur}
 				/>
 			) : (
 				<TextAreaNote
@@ -55,6 +60,7 @@ export function Input({
 					keyboardType="default"
 					value={value}
 					onChangeText={onChangeText}
+					onBlur={onBlur}
 				/>
 			)}
 		</Body>
