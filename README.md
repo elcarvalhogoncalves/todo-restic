@@ -55,7 +55,7 @@ Após iniciar o projeto com o Expo, você pode rodá-lo em um dispositivo físic
 - **Dispositivo físico**: Baixe o aplicativo Expo Go no seu dispositivo e escaneie o QR Code gerado pelo npx expo start.
 - **Emulador**: Se estiver usando Android Studio ou Xcode, inicie um emulador antes de rodar o comando de inicialização.
 
-##### Scripts Disponíveis
+#### Scripts Disponíveis
 
 No diretório do projeto, você pode rodar os seguintes comandos:
 
