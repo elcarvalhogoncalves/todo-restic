@@ -16,7 +16,7 @@ export function Tasks() {
 		setModalCreateTask(!modalCreateTask);
 	}
 
-	function handleTaskChange(taskToChange: TaskProps) {
+	function handleTaskCheck(taskToChange: TaskProps) {
 		const map = tasks.map((task) =>
 			task.id === taskToChange.id
 				? { ...task, status: !task.status }
@@ -58,7 +58,7 @@ export function Tasks() {
 						title={item.title}
 						description={item.description}
 						status={item.status}
-						onCheck={() => handleTaskChange(item)}
+						onCheck={() => handleTaskCheck(item)}
 						onRemove={() => handleTaskDelete(item)}
 					/>
 				)}
@@ -73,7 +73,10 @@ export function Tasks() {
 				modalVisible={modalCreateTask}
 				handleModalCreateTask={handleModalCreateTask}
 			/>
-			<ButtonAdd handleModalCreateTask={handleModalCreateTask} />
+			<ButtonAdd
+				title="Adicionar tarefa"
+				handleModalCreateTask={handleModalCreateTask}
+			/>
 		</Section>
 	);
 }

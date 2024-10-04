@@ -15,7 +15,7 @@ export function HeaderProfile({ name }: HeaderProfileProps) {
 				<Feather name="user" size={32} color="black" />
 			</PersonImage>
 			<PersonTitle>
-				{hours >= 5 && hours < 13
+				{hours >= 4 && hours < 13
 					? "Bom dia"
 					: hours >= 13 && hours < 18
 						? "Boa tarde"

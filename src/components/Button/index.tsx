@@ -4,12 +4,12 @@ import { ButtonProps } from "../../utils/types";
 type Props = {
 	type?: ButtonProps;
 	title: string;
-	handleModalCreateTask?: () => void;
+	onPress?: () => void;
 };
 
-export function Button({ type, title, handleModalCreateTask }: Props) {
+export function Button({ type, title, onPress }: Props) {
 	return (
-		<Body type={type} onPress={handleModalCreateTask}>
+		<Body type={type} onPress={onPress}>
 			<TextButton type={type}>{title}</TextButton>
 		</Body>
 	);

@@ -25,8 +25,8 @@ export const TaskContext = createContext<TaskContextProps>({
 function TaskProvider({ children }: TaskProviderProps) {
 	const [task, setTask] = useState<TaskProps>({
 		id: 0,
-		title: "",
-		description: "",
+		title: "A",
+		description: "B",
 		status: false,
 	});
 	const [tasks, setTasks] = useState<TaskProps[]>([] as TaskProps[]);

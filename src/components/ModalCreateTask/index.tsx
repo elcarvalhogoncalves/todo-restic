@@ -7,10 +7,7 @@ import { Alert, Modal, View } from "react-native";
 import { useContext, useState } from "react";
 import { TaskProps } from "../../utils/types";
 import { TaskContext } from "../../context/TaskContext";
-import {
-	KeyboardAvoidingView,
-	Platform
-} from "react-native";
+import { KeyboardAvoidingView, Platform } from "react-native";
 
 type ModalCreateTaskProps = {
 	modalVisible: boolean;
@@ -86,11 +83,11 @@ export function ModalCreateTask({
 							<Button
 								title="Criar"
 								type="success"
-								handleModalCreateTask={handleTaskAdd}
+								onPress={handleTaskAdd}
 							/>
 							<Button
 								title="Cancelar"
-								handleModalCreateTask={closeAndClearTextModal}
+								onPress={closeAndClearTextModal}
 							/>
 						</View>
 					</Container>

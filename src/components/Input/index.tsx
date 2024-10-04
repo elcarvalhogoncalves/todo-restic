@@ -1,13 +1,13 @@
-import { Body, InputText, TextArea } from "./styles";
+import { Body, InputText, TextArea, TextAreaNote } from "./styles";
 
-type InputType = "TEXT" | "TEXTAREA" | "PASSWORD";
+import { InputType } from "../../utils/types";
+import { View } from "react-native";
 
 type InputProps = {
 	placeholder?: string;
 	type?: InputType;
 	value: string;
 	onChangeText: (text: string) => void;
-	handleTaskAdd?: () => void;
 };
 
 export function Input({
@@ -17,7 +17,7 @@ export function Input({
 	onChangeText,
 }: InputProps) {
 	return (
-		<Body>
+		<Body Type={type}>
 			{type === "TEXT" ? (
 				<InputText
 					placeholder={placeholder}
@@ -36,8 +36,18 @@ export function Input({
 					value={value}
 					onChangeText={onChangeText}
 				/>
-			) : (
+			) : type === "TEXTAREA" ? (
 				<TextArea
+					placeholder={placeholder}
+					scrollEnabled={true}
+					multiline={true}
+					selectionColor="#3498db"
+					keyboardType="default"
+					value={value}
+					onChangeText={onChangeText}
+				/>
+			) : (
+				<TextAreaNote
 					placeholder={placeholder}
 					scrollEnabled={true}
 					multiline={true}

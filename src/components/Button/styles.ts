@@ -19,7 +19,7 @@ export const Body = styled.TouchableOpacity<Props>`
 						: ""};
 	justify-content: center;
 	align-items: center;
-	padding: 12px;
+	padding: 8px 12px;
 	border-radius: 16px;
 	border-width: ${({ type }) => (type ? "3px" : 0)};
 	border-color: ${({ type }) =>

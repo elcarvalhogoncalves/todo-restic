@@ -1,7 +1,13 @@
 import styled from "styled-components/native";
 
-export const Body = styled.View`
+type Type = {
+	Type: string;
+};
+
+export const Body = styled.View<Type>`
+	${(props) => (props.Type === "TEXTAREA_NOTE" ? "flex: 1;" : "")}
 	width: 100%;
+	background-color: #f2c063;
 	margin-bottom: 24px;
 `;
 export const InputText = styled.TextInput`
@@ -18,7 +24,20 @@ export const InputText = styled.TextInput`
 export const TextArea = styled.TextInput`
 	background-color: #d9d9d9;
 	width: 100%;
-	height: 250px;
+	height: 180px;
+	border-bottom-width: 3px;
+	border-bottom-color: #6f6f6f;
+	padding: 12px;
+	font-size: 16px;
+	font-family: Poppins_400Regular;
+	color: #000;
+	text-align-vertical: top;
+`;
+
+export const TextAreaNote = styled.TextInput`
+	flex: 1;
+	width: 100%;
+	background-color: #d9d9d9;
 	border-bottom-width: 3px;
 	border-bottom-color: #6f6f6f;
 	padding: 12px;

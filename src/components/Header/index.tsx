@@ -1,5 +1,12 @@
 import { View } from "react-native";
-import { Body, Title, IconBack, Container, Circle } from "./styles";
+import {
+	Body,
+	HeaderTitle,
+	Title,
+	IconBack,
+	Container,
+	Circle,
+} from "./styles";
 import Entypo from "@expo/vector-icons/Entypo";
 import { HeaderProfile } from "../HeaderProfile";
 import { HeaderDate } from "../HeaderDate";
@@ -9,21 +16,25 @@ import { useContext, useEffect, useState } from "react";
 
 type HeaderProps = {
 	title?: string;
+	backFunction?: () => void;
+	checked?: boolean;
 };
 
-export function Header({ title }: HeaderProps) {
+export function Header({ title, backFunction, checked }: HeaderProps) {
 	const { tasks } = useContext(TaskContext);
 	const [contadorEmAberto, setContadorEmAberto] = useState(0);
 	useEffect(() => {
-		const totalTasksEmAberto = tasks.filter((task) => task.status === false).length;
-		setContadorEmAberto(totalTasksEmAberto);	
-	  }, [tasks]);
+		const totalTasksEmAberto = tasks.filter(
+			(task) => task.status === false
+		).length;
+		setContadorEmAberto(totalTasksEmAberto);
+	}, [tasks]);
 	return (
 		<Body>
 			<Circle />
 			{title ? (
-				<View style={{ flexDirection: "row" }}>
-					<IconBack>
+				<HeaderTitle>
+					<IconBack onPress={backFunction}>
 						<Entypo
 							style={{ marginLeft: 0 }}
 							name="chevron-left"
@@ -31,8 +42,8 @@ export function Header({ title }: HeaderProps) {
 							color="black"
 						/>
 					</IconBack>
-					<Title>{title}</Title>
-				</View>
+					<Title checked={checked ?? false}>{title}</Title>
+				</HeaderTitle>
 			) : (
 				<Container>
 					<HeaderProfile name="Gabriel" />
