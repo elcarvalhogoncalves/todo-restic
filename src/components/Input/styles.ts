@@ -46,3 +46,15 @@ export const TextAreaNote = styled.TextInput`
 	color: #000;
 	text-align-vertical: top;
 `;
+
+export const InputTextWelcome = styled.TextInput`
+	background-color: #ebb95c;
+	width: 100%;
+	height: 48px;
+	border-bottom-width: 3px;
+	border-bottom-color: #9c7c40;
+	padding: 0 12px;
+	font-size: 16px;
+	font-family: Poppins_600SemiBold;
+	color: #000;
+`;

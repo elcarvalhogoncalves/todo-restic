@@ -41,12 +41,6 @@ export function ModalCreateTask({
 		title: string;
 		description: string;
 	}) {
-		if (tasks.some((task) => task.title === title)) {
-			return Alert.alert(
-				"Tarefa já cadastrada",
-				"Você não pode cadastrar uma tarefa com um título que já existe"
-			);
-		}
 		createTask(title, description);
 		MessageSuccess("Tarefa criada com sucesso!");
 		handleModalCreateTask();
@@ -76,16 +70,28 @@ export function ModalCreateTask({
 							}}
 							validationSchema={TaskSchema}
 							onSubmit={(values, { resetForm }) => {
-								handleTaskAdd({
-									title: values.taskTitle,
-									description: values.taskDescription,
-								});
-								resetForm({
-									values: {
-										taskTitle: "",
-										taskDescription: "",
-									},
-								});
+								if (
+									tasks.some(
+										(task) =>
+											task.title === values.taskTitle
+									)
+								) {
+									return Alert.alert(
+										"Tarefa já cadastrada",
+										"Você não pode cadastrar uma tarefa com um título que já existe"
+									);
+								} else {
+									handleTaskAdd({
+										title: values.taskTitle,
+										description: values.taskDescription,
+									});
+									resetForm({
+										values: {
+											taskTitle: "",
+											taskDescription: "",
+										},
+									});
+								}
 							}}
 						>
 							{({

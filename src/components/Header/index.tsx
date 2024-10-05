@@ -21,8 +21,9 @@ type HeaderProps = {
 };
 
 export function Header({ title, backFunction, checked }: HeaderProps) {
-	const { tasks } = useContext(TaskContext);
+	const { tasks, userName } = useContext(TaskContext);
 	const [contadorEmAberto, setContadorEmAberto] = useState(0);
+
 	useEffect(() => {
 		const totalTasksEmAberto = tasks.filter(
 			(task) => task.status === false
@@ -46,7 +47,7 @@ export function Header({ title, backFunction, checked }: HeaderProps) {
 				</HeaderTitle>
 			) : (
 				<Container>
-					<HeaderProfile name="Gabriel" />
+					<HeaderProfile name={userName} />
 					<HeaderDate />
 					<Notification number={contadorEmAberto} />
 				</Container>

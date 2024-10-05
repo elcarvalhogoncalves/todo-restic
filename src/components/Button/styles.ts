@@ -16,7 +16,9 @@ export const Body = styled.TouchableOpacity<Props>`
 					? "#F44336"
 					: type === "edit"
 						? "#2196F3"
-						: ""};
+						: type === "welcome"
+							? "#4CAF50"
+							: ""};
 	justify-content: center;
 	align-items: center;
 	padding: 8px 12px;
@@ -31,7 +33,9 @@ export const Body = styled.TouchableOpacity<Props>`
 					? "#C3362B"
 					: type === "edit"
 						? "#1A78C2"
-						: ""};
+						: type === "welcome"
+							? "#3D8C40"
+							: ""};
 `;
 
 export const TextButton = styled.Text<Props>`

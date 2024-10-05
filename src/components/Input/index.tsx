@@ -1,7 +1,12 @@
-import { Body, InputText, TextArea, TextAreaNote } from "./styles";
+import {
+	Body,
+	InputText,
+	TextArea,
+	TextAreaNote,
+	InputTextWelcome,
+} from "./styles";
 
 import { InputType } from "../../utils/types";
-import { View } from "react-native";
 
 type InputProps = {
 	placeholder?: string;
@@ -30,10 +35,9 @@ export function Input({
 					onChangeText={onChangeText}
 					onBlur={onBlur}
 				/>
-			) : type === "PASSWORD" ? (
-				<InputText
+			) : type === "TEXT_WELCOME" ? (
+				<InputTextWelcome
 					placeholder={placeholder}
-					secureTextEntry={true}
 					selectionColor="#3498db"
 					keyboardType="default"
 					value={value}

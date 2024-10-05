@@ -10,7 +10,7 @@ import { ModalCreateTask } from "../ModalCreateTask";
 
 export function Tasks() {
 	const [modalCreateTask, setModalCreateTask] = useState(false);
-	const { tasks, setTasks } = useContext(TaskContext);
+	const { tasks, setTasks, userName } = useContext(TaskContext);
 
 	function handleModalCreateTask() {
 		setModalCreateTask(!modalCreateTask);

@@ -41,7 +41,7 @@ export function Note() {
 							(task) => task.title !== taskToDelete.title
 						);
 						setTasks(updateTask);
-						navigation.popToTop();
+						navigation.pop();
 					},
 				},
 				{
@@ -55,7 +55,7 @@ export function Note() {
 	return (
 		<Body>
 			<Header
-				backFunction={() => navigation.popToTop()}
+				backFunction={() => navigation.pop()}
 				title={task.title}
 				checked={task.status}
 			/>
@@ -69,15 +69,22 @@ export function Note() {
 				<View
 					style={{
 						flexDirection: "row",
-						justifyContent: "space-between",
+						justifyContent:
+							taskTextAreaNote !== task.description
+								? "space-between"
+								: "flex-end",
+
 						width: "100%",
 					}}
 				>
-					<Button
-						title="Editar"
-						type="edit"
-						onPress={() => handleTaskChange(task)}
-					/>
+					{taskTextAreaNote !== task.description && (
+						<Button
+							title="Salvar"
+							type="edit"
+							onPress={() => handleTaskChange(task)}
+						/>
+					)}
+
 					<Button
 						title="Apagar"
 						type="delete"

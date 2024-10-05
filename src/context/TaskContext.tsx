@@ -4,10 +4,12 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 interface TaskContextProps {
 	task: TaskProps;
 	tasks: TaskProps[];
+	userName: string;
 	selectTask: (task: TaskProps) => void;
 	clearTask: () => void;
 	createTask: (title: string, description: string) => void;
 	setTasks: ([]: TaskProps[]) => void;
+	setUserName: (name: string) => void;
 }
 
 interface TaskProviderProps {
@@ -18,13 +20,16 @@ export const TaskContext = createContext<TaskContextProps>({
 	task: { id: 0, title: "", description: "", status: false },
 	selectTask: () => {},
 	clearTask: () => {},
+	userName: "",
 	tasks: [],
 	createTask: () => {},
 	setTasks: () => {},
+	setUserName: () => {},
 });
 
 function TaskProvider({ children }: TaskProviderProps) {
 	const [id, setId] = useState(0);
+	const [userName, setUserName] = useState("");
 	const [task, setTask] = useState<TaskProps>({
 		id: 0,
 		title: "",
@@ -35,7 +40,11 @@ function TaskProvider({ children }: TaskProviderProps) {
 
 	async function storageTasks(tasks: TaskProps[]) {
 		try {
-			const jsonData = JSON.stringify(tasks);
+			const jsonData = JSON.stringify({
+				username: userName,
+				tasks: tasks,
+				idCounter: id,
+			});
 			await AsyncStorage.setItem("@tasks", jsonData);
 		} catch (error) {
 			console.log(error);
@@ -46,7 +55,9 @@ function TaskProvider({ children }: TaskProviderProps) {
 		try {
 			const jsonData = await AsyncStorage.getItem("@tasks");
 			if (jsonData) {
-				setTasks(JSON.parse(jsonData));
+				setTasks(JSON.parse(jsonData).tasks);
+				setUserName(JSON.parse(jsonData).username);
+				setId(JSON.parse(jsonData).idCounter);
 			}
 		} catch (error) {
 			console.log(error);
@@ -78,11 +89,20 @@ function TaskProvider({ children }: TaskProviderProps) {
 
 	useEffect(() => {
 		storageTasks(tasks);
-	}, [tasks]);
+	}, [tasks, userName]);
 
 	return (
 		<TaskContext.Provider
-			value={{ task, selectTask, clearTask, tasks, createTask, setTasks }}
+			value={{
+				task,
+				selectTask,
+				clearTask,
+				tasks,
+				createTask,
+				setTasks,
+				setUserName,
+				userName,
+			}}
 		>
 			{children}
 		</TaskContext.Provider>

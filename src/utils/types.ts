@@ -8,9 +8,10 @@ export type TaskProps = {
 };
 
 export type RootStackParamList = {
+	Welcome: undefined;
 	Main: undefined;
 	Note: TaskProps;
 };
 
-export type InputType = "TEXT" | "TEXTAREA" | "TEXTAREA_NOTE" | "PASSWORD";
-export type ButtonProps = "success" | "back" | "delete" | "edit";
+export type InputType = "TEXT" | "TEXTAREA" | "TEXTAREA_NOTE" | "TEXT_WELCOME";
+export type ButtonProps = "success" | "back" | "delete" | "edit" | "welcome";
