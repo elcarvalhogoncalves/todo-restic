@@ -56,8 +56,8 @@ function TaskProvider({ children }: TaskProviderProps) {
 		try {
 			const jsonData = await AsyncStorage.getItem("@tasks");
 			if (jsonData) {
-				setTasks(JSON.parse(jsonData).tasks);
 				setUserName(JSON.parse(jsonData).username);
+				setTasks(JSON.parse(jsonData).tasks);
 				setId(JSON.parse(jsonData).idCounter);
 			}
 		} catch (error) {

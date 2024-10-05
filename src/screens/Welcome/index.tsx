@@ -37,7 +37,7 @@ export function Welcome() {
 		  };
 		  clearAsyncStorage();
 		  */
-		if (userName) {
+		  if (userName) {
 			navigation.navigate("Main");
 		}
 	}, [userName]);
@@ -77,7 +77,7 @@ export function Welcome() {
 								>
 									<Input
 										type="TEXT_WELCOME"
-										value={values.username}
+										value={values.username || userName}
 										onChangeText={handleChange("username")}
 										onBlur={handleBlur("username")}
 									/>
