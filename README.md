@@ -9,6 +9,9 @@ Este é um aplicativo de To-Do estilo bloco de notas, desenvolvido em **React Na
 -   Marcar tarefas como concluídas
 -   Interface amigável
 
+## Protótipo
+![Protótipo do projeto](https://i.imgur.com/Dp8K9yv.png)
+
 ## Tecnologias e Bibliotecas Utilizadas
 
 -   [React Native](https://reactnative.dev/)
