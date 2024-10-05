@@ -1,5 +1,7 @@
 import { Body, LogoText } from "./styles";
+
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+
 export function Logo() {
 	return (
 		<Body>

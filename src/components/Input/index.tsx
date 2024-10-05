@@ -1,11 +1,4 @@
-import {
-	Body,
-	InputText,
-	TextArea,
-	TextAreaNote,
-	InputTextWelcome,
-} from "./styles";
-
+import { Body, InputText, TextArea,	TextAreaNote, InputTextWelcome } from "./styles";
 import { InputType } from "../../utils/types";
 
 type InputProps = {

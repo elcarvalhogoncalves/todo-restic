@@ -1,16 +1,17 @@
-import { Body } from "./styles";
+import { RootStackParamList, TaskProps } from "../../utils/types";
+import { MessageSuccess } from "../../components/MessageSuccess";
+import { TaskContext } from "../../context/TaskContext";
 import { Container } from "../../components/Container";
+import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 import { Label } from "../../components/Label";
 import { Input } from "../../components/Input";
-import { useContext, useState } from "react";
-import { Alert, Platform, View, ToastAndroid } from "react-native";
-import { Button } from "../../components/Button";
-import { TaskContext } from "../../context/TaskContext";
-import { RootStackParamList, TaskProps } from "../../utils/types";
+import { Body } from "./styles";
+
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
-import { MessageSuccess } from "../../components/MessageSuccess";
+import { useContext, useState } from "react";
+import { Alert, View  } from "react-native";
 
 type NoteProps = NativeStackScreenProps<RootStackParamList>;
 

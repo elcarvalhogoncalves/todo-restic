@@ -1,11 +1,12 @@
+import { TaskProps, RootStackParamList } from "../../utils/types";
+import { TaskContext } from "../../context/TaskContext";
 import { Body, Title, Square, Trash } from "./styles";
-import { Text } from "react-native";
+
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { useNavigation } from "@react-navigation/native";
 import Feather from "@expo/vector-icons/Feather";
 import { useContext, useState } from "react";
-import { TaskProps, RootStackParamList } from "../../utils/types";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { TaskContext } from "../../context/TaskContext";
-import { useNavigation } from "@react-navigation/native";
+import { Text } from "react-native";
 
 type navProps = NativeStackScreenProps<RootStackParamList>;
 

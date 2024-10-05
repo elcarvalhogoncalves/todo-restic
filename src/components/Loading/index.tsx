@@ -1,5 +1,6 @@
-import { ActivityIndicator } from "react-native";
 import { Body } from "./styles";
+
+import { ActivityIndicator } from "react-native";
 
 export function Loading() {
 	return (

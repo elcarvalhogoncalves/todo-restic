@@ -1,7 +1,7 @@
-import { Body } from "./styles";
 import { Container } from "../../components/Container";
-import { Tasks } from "../../components/Tasks";
 import { Header } from "../../components/Header";
+import { Tasks } from "../../components/Tasks";
+import { Body } from "./styles";
 export function Main() {
 	return (
 		<Body>

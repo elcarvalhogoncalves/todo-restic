@@ -1,15 +1,18 @@
+import { TaskContext } from "../../context/TaskContext";
+import { RootStackParamList } from "../../utils/types";
+import { Button } from "../../components/Button";
+import { Input } from "../../components/Input";
+import { Logo } from "../../components/Logo";
+
+import { Body, WebText, Circle } from "./styles";
+
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { useNavigation } from "@react-navigation/native";
 import { useContext, useEffect } from "react";
 import { Text, View } from "react-native";
-import { Body, WebText, Circle } from "./styles";
-import { Input } from "../../components/Input";
-import { TaskContext } from "../../context/TaskContext";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { Button } from "../../components/Button";
-import { Logo } from "../../components/Logo";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../../utils/types";
-import { useNavigation } from "@react-navigation/native";
 
 type navProps = NativeStackScreenProps<RootStackParamList>;
 
@@ -24,6 +27,16 @@ export function Welcome() {
 			.required("Username é obrigatório"),
 	});
 	useEffect(() => {
+		/*
+		const clearAsyncStorage = async () => {
+			try {
+			  await AsyncStorage.clear();
+			} catch (e) {
+			  console.error(e);
+			}
+		  };
+		  clearAsyncStorage();
+		  */
 		if (userName) {
 			navigation.navigate("Main");
 		}
@@ -71,7 +84,7 @@ export function Welcome() {
 									{errors.username && touched.username && (
 										<Text
 											style={{
-												color: "#FF8477",
+												color: "#f53c28",
 											}}
 										>
 											{errors.username}

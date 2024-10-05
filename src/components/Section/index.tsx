@@ -1,6 +1,6 @@
-import { PropsWithChildren, useState } from "react";
 import { Body, TitleSection, TitleText } from "./styles";
-import { Text } from "react-native";
+
+import { PropsWithChildren, useState } from "react";
 import Feather from "@expo/vector-icons/Feather";
 
 type SectionProps = PropsWithChildren<{}> & {

@@ -1,19 +1,13 @@
-import {
-	Alert,
-	Modal,
-	View,
-	Text,
-	KeyboardAvoidingView,
-	Platform,
-} from "react-native";
-import { useContext } from "react";
 import { TaskContext } from "../../context/TaskContext";
 import { MessageSuccess } from "../MessageSuccess";
 import { HeaderModal } from "../HeaderModal";
+import { Body, Container } from "./styles";
 import { Button } from "../Button";
 import { Input } from "../Input";
 import { Label } from "../Label";
-import { Body, Container } from "./styles";
+
+import { Alert,	Modal, View, Text, KeyboardAvoidingView, Platform } from "react-native";
+import { useContext } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 

@@ -1,12 +1,13 @@
+import { TaskContext } from "../../context/TaskContext";
+import { ModalCreateTask } from "../ModalCreateTask";
 import { Section } from "../../components/Section";
-import { FlatList, View, Alert } from "react-native";
+import { TaskProps } from "../../utils/types";
 import { Task } from "../../components/Task";
 import { ButtonAdd } from "../ButtonAdd";
 import { EmptyList } from "../EmptyList";
-import { TaskProps } from "../../utils/types";
+
+import { FlatList, View, Alert } from "react-native";
 import { useContext, useState } from "react";
-import { TaskContext } from "../../context/TaskContext";
-import { ModalCreateTask } from "../ModalCreateTask";
 
 export function Tasks() {
 	const [modalCreateTask, setModalCreateTask] = useState(false);

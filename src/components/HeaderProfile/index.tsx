@@ -1,4 +1,5 @@
 import { Body, PersonImage, PersonTitle } from "./styles";
+
 import Feather from "@expo/vector-icons/Feather";
 import { Text } from "react-native";
 

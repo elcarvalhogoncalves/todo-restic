@@ -1,6 +1,6 @@
+import { ButtonProps } from "../../utils/types";
 import { Body, TextButton } from "./styles";
 
-import { ButtonProps } from "../../utils/types";
 type Props = {
 	type?: ButtonProps;
 	title: string;

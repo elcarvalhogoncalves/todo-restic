@@ -1,4 +1,5 @@
 import { Body, Title, IconButton } from "./styles";
+
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 type HeaderModalProps = {

@@ -1,18 +1,11 @@
-import { View } from "react-native";
-import {
-	Body,
-	HeaderTitle,
-	Title,
-	IconBack,
-	Container,
-	Circle,
-} from "./styles";
-import Entypo from "@expo/vector-icons/Entypo";
-import { HeaderProfile } from "../HeaderProfile";
-import { HeaderDate } from "../HeaderDate";
-import { Notification } from "../Notification";
+import { Body, HeaderTitle, Title, IconBack, Container, Circle } from "./styles";
 import { TaskContext } from "../../context/TaskContext";
+import { HeaderProfile } from "../HeaderProfile";
+import { Notification } from "../Notification";
+import { HeaderDate } from "../HeaderDate";
+
 import { useContext, useEffect, useState } from "react";
+import Entypo from "@expo/vector-icons/Entypo";
 
 type HeaderProps = {
 	title?: string;
