@@ -14,4 +14,4 @@ export type RootStackParamList = {
 };
 
 export type InputType = "TEXT" | "TEXTAREA" | "TEXTAREA_NOTE" | "TEXT_WELCOME";
-export type ButtonProps = "success" | "back" | "delete" | "edit" | "welcome";
+export type ButtonProps = "SUCCESS" | "BACK" | "DELETE" | "EDIT" | "WELCOME";

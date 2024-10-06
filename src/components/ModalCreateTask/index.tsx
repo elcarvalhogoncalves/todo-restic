@@ -6,7 +6,7 @@ import { Button } from "../Button";
 import { Input } from "../Input";
 import { Label } from "../Label";
 
-import { Alert,	Modal, View, Text, KeyboardAvoidingView, Platform } from "react-native";
+import { Alert, Modal, View, Text, KeyboardAvoidingView, Platform } from "react-native";
 import { useContext } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -154,7 +154,7 @@ export function ModalCreateTask({
 										>
 											<Button
 												title="Criar"
-												type="success"
+												type="SUCCESS"
 												onPress={handleSubmit}
 											/>
 											<Button
