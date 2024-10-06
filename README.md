@@ -10,7 +10,7 @@ Este é um aplicativo de To-Do estilo bloco de notas, desenvolvido em **React Na
 -   Interface amigável
 
 ## Protótipo
-![Protótipo do projeto](https://i.imgur.com/Dp8K9yv.png)
+![Protótipo do projeto](https://i.imgur.com/nJKEuO5.png)
 
 ## Tecnologias e Bibliotecas Utilizadas
 
@@ -18,9 +18,9 @@ Este é um aplicativo de To-Do estilo bloco de notas, desenvolvido em **React Na
 -   [Expo](https://expo.dev/)
 -   [Styled Components](https://styled-components.com/)
 -   [React Navigation](https://reactnavigation.org/)
+-   [Async Storage](https://docs.expo.dev/versions/latest/sdk/async-storage/)
 -   [Formik](https://formik.org/)
 -   [Yup](https://github.com/jquense/yup)
--   [Async Storage](https://docs.expo.dev/versions/latest/sdk/async-storage/)
 
 ## Pré-requisitos
 

@@ -8,15 +8,15 @@ type Props = {
 
 export const Body = styled.TouchableOpacity<Props>`
 	background-color: ${({ type }) =>
-		type === "success"
+		type === "SUCCESS"
 			? "#4CAF50"
-			: type === "back"
+			: type === "BACK"
 				? "#BBBBBB"
-				: type === "delete"
+				: type === "DELETE"
 					? "#F44336"
-					: type === "edit"
+					: type === "EDIT"
 						? "#2196F3"
-						: type === "welcome"
+						: type === "WELCOME"
 							? "#4CAF50"
 							: ""};
 	justify-content: center;
@@ -25,15 +25,15 @@ export const Body = styled.TouchableOpacity<Props>`
 	border-radius: 16px;
 	border-width: ${({ type }) => (type ? "3px" : 0)};
 	border-color: ${({ type }) =>
-		type === "success"
+		type === "SUCCESS"
 			? "#3D8C40 "
-			: type === "back"
+			: type === "BACK"
 				? "#969696"
-				: type === "delete"
+				: type === "DELETE"
 					? "#C3362B"
-					: type === "edit"
+					: type === "EDIT"
 						? "#1A78C2"
-						: type === "welcome"
+						: type === "WELCOME"
 							? "#3D8C40"
 							: ""};
 `;

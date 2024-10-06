@@ -26,8 +26,8 @@ export function Welcome() {
 			.max(16, "Seu username deve ter no máximo 16 caracteres")
 			.required("Username é obrigatório"),
 	});
+	/*
 	useEffect(() => {
-		/*
 		const clearAsyncStorage = async () => {
 			try {
 			  await AsyncStorage.clear();
@@ -36,18 +36,15 @@ export function Welcome() {
 			}
 		  };
 		  clearAsyncStorage();
-		  */
-		  if (userName) {
-			navigation.navigate("Main");
-		}
-	}, [userName]);
+		}, []);
+		*/
 
 	return (
 		<>
 			<Body>
 				<Circle />
 				<Logo />
-				<WebText>Olá, me diga seu nome?</WebText>
+				<WebText>Olá, digite o seu nome:</WebText>
 				<Formik
 					initialValues={{ username: userName }}
 					validationSchema={userNameSchema}
@@ -60,10 +57,17 @@ export function Welcome() {
 						handleSubmit,
 						handleChange,
 						handleBlur,
+						setFieldValue,
 						values,
 						errors,
 						touched,
 					}) => {
+						useEffect(() => {
+							if (userName) {
+								navigation.navigate("Main");
+							}
+							setFieldValue("username", userName);
+						  }, [userName, setFieldValue]);
 						return (
 							<>
 								<View
@@ -77,7 +81,7 @@ export function Welcome() {
 								>
 									<Input
 										type="TEXT_WELCOME"
-										value={values.username || userName}
+										value={values.username}
 										onChangeText={handleChange("username")}
 										onBlur={handleBlur("username")}
 									/>
@@ -92,7 +96,7 @@ export function Welcome() {
 									)}
 								</View>
 								<Button
-									type="welcome"
+									type="WELCOME"
 									title="Entrar"
 									onPress={handleSubmit}
 								/>

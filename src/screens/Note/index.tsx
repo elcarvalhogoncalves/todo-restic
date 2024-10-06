@@ -11,7 +11,7 @@ import { Body } from "./styles";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
 import { useContext, useState } from "react";
-import { Alert, View  } from "react-native";
+import { Alert, View } from "react-native";
 
 type NoteProps = NativeStackScreenProps<RootStackParamList>;
 
@@ -81,14 +81,14 @@ export function Note() {
 					{taskTextAreaNote !== task.description && (
 						<Button
 							title="Salvar"
-							type="edit"
+							type="EDIT"
 							onPress={() => handleTaskChange(task)}
 						/>
 					)}
 
 					<Button
 						title="Apagar"
-						type="delete"
+						type="DELETE"
 						onPress={() => handleTaskDelete(task)}
 					/>
 				</View>
